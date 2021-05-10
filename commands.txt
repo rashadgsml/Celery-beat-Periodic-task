@@ -1,0 +1,5 @@
+flower -A periodic_email_sending --port=5555
+
+celery -A periodic_email_sending worker -l INFO --pool=solo
+
+celery -A periodic_email_sending beat -l info
